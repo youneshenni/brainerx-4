@@ -10,6 +10,7 @@
         grid-template-columns: 8px 70px 8px 80px 1fr 80px 60px 100px 100px 60px 80px 1fr 166px;
         grid-template-rows: 8px 16px 54px 8px 1fr 120px 100px 60px 1fr 70px;
         height: 100vh;
+        width: 100vw;
         margin: 0;
       }
       .background {
@@ -69,6 +70,36 @@
         grid-area: 1 / 1/ -1 /-1;
         background-color: rgba(0, 0, 0, 0.229);
         z-index: -1;
+      }
+
+      @media screen and (max-width: 600px) {
+        body {
+          grid-template-rows: 8px 16px 54px 8px 1fr 120px 100px 60px 60px 1fr 70px;
+          grid-template-columns: 8px 70px 8px 50px 20px 1fr 1fr 20px 50px 8px 70px 8px;
+        }
+
+        .footer {
+          grid-area: 11 / 1 / -1 / -1;
+        }
+        .background,
+        .overlay {
+          grid-area: 1 / 1 / -1 / -1;
+        }
+        .nav {
+          display: none;
+        }
+        .heading {
+          grid-area: 6 / 3 / 8 / 10;
+        }
+        .description {
+          grid-area: 7 / 3 / 9 / 10;
+        }
+        .btn1 {
+          grid-area: 8 / 3 / 9 / 7;
+        }
+        .btn2 {
+          grid-area: 8 / 7 / 9 / 11;
+        }
       }
     </style>
   </head>
