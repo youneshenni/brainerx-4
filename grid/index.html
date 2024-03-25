@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 8px 70px 8px 80px 1fr 80px 60px 100px 100px 60px 80px 1fr 166px;
+        grid-template-rows: 8px 16px 54px 8px 1fr 120px 100px 60px 1fr 70px;
+        height: 100vh;
+        margin: 0;
+      }
+      .background {
+        grid-area: 1 / 1 / -1 / -1;
+        width: 100%;
+        height: 100%;
+        object-position: top;
+        z-index: -2;
+      }
+      .header {
+        background-color: rgba(240, 248, 255, 0.3);
+        grid-area: 1 / 1 / 4 / -1;
+      }
+      .logo {
+        grid-area: 2 / 2 / 4 / 3;
+        height: 100%;
+        object-fit: 50%;
+        object-position: center;
+        border-radius: 100%;
+      }
+      .title {
+        grid-area: 3 / 4 / 3 / 5;
+        margin: 0;
+        font-size: 2rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .nav {
+        grid-area: 3 / 12 / 4 / -1;
+      }
+      .nav > li {
+        display: inline;
+        margin: 16px;
+        color: white;
+      }
+
+      .heading {
+        grid-area: 6 / 8 / 7 / 10;
+        text-align: center;
+        color: white;
+      }
+      .description {
+        grid-area: 7 / 7 / 8 / 11;
+        text-align: center;
+        font-size: medium;
+        color: white;
+      }
+      .btn1 {
+        grid-area: 8 / 6 / 9 / 9;
+      }
+      .btn2 {
+        grid-area: 8 / 9 / 9 / 12;
+      }
+      .footer {
+        grid-area: 10 / 1 / -1 / -1;
+        background-color: rgba(240, 248, 255, 0.3);
+      }
+      .overlay {
+        grid-area: 1 / 1/ -1 /-1;
+        background-color: rgba(0, 0, 0, 0.229);
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-james-wheeler-417074.jpg&fm=jpg"
+      alt=""
+      class="background"
+    />
+    <header class="header"></header>
+    <img src="logo.jpeg" alt="" class="logo" />
+    <h4 class="title">BrainerX</h4>
+    <ul class="nav">
+      <li>Menu 1</li>
+      <li>Menu 2</li>
+      <li>Menu 3</li>
+    </ul>
+    <h1 class="heading">Welcome to BrainerX</h1>
+    <h2 class="description">
+      Here you will find lots of training material to improve in your career
+    </h2>
+    <button class="btn1">Click me!</button
+    ><button class="btn2">Register!</button>
+    <footer class="footer"></footer>
+    <div class="overlay"></div>
+  </body>
+</html>
