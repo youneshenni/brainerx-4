@@ -1,15 +1,47 @@
 import { useState } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import Table from "./Table";
 import List from "./List";
 
 export default function App() {
   return (
-    <div>
-      <Page1 name="BrainerX" />
-      <Page2 />
-      <Page3 />
-    </div>
+    <RouterProvider
+      router={createBrowserRouter([
+        {
+          path: "/",
+          element: (
+            <div>
+              <header>
+                <Link to="/">Page 1</Link>
+                <Link to="/page2">Page 2</Link>
+                <Link to="/page3">Page 3</Link>
+              </header>
+              <Outlet />
+            </div>
+          ),
+          children: [
+            {
+              path: "/",
+              element: <Page1 />,
+            },
+            {
+              path: "/page2",
+              element: <Page2 />,
+            },
+            {
+              path: "/page3",
+              element: <Page3 />,
+            },
+          ],
+        },
+      ])}
+    />
   );
 }
 
